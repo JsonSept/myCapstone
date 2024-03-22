@@ -35,6 +35,13 @@
   .container {
     display:flex;
     justify-content: center;
+    
+  }
+  @media screen and (max-width: 300px) {
+    .container {
+      margin-top: 100%;
+      margin-bottom: 40%;
+    }
   }
   .logo {
     height:60vh;

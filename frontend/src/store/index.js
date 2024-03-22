@@ -2,27 +2,7 @@ import { createStore } from 'vuex'
 import axios from 'axios'
 
 const baseUrl = "http://localhost:8076";
-// const baseUrl = "https://capstone-social-app.onrender.com/";
-
-// function ProductDetails(props) {
-//   const { prodID } = props.match.params; // Get the product ID from route parameters
-//   const [product, setProduct] = useState({});
-//   useEffect(() => {
-//     axios.get(`https://nodejs-eomp-vi7f.onrender.com`)
-//       .then((res) => {
-//         setProduct(res.data);
-//       })
-//       .catch((err) => {
-//         console.error('Error fetching product details:', err);
-//       });
-//   }, [prodID]);
-//   return (
-//     <div>
-//       <h1>{products.prodName}</h1>
-//       <p>{product.amount}</p>
-//     </div>
-//   );
-// }
+// const baseUrl = "https://capstone-social-app.onrender.com";
 
 
 
@@ -30,6 +10,7 @@ export default createStore({
   state: {
     products: null,
     users: null,
+    loggedIn:false
   },
   getters: {
     getProducts(state) {
@@ -60,6 +41,34 @@ export default createStore({
     },
   },
   actions: {
+    async registerUser({commit}, newUser){
+      console.log(newUser);
+      let {data} = await axios.post(baseUrl+'/users',newUser)
+      alert(data.msg)
+      window.location.reload()
+     },
+     async loginUser({commit}, currentUser){
+      console.log(user);
+      let {data} = await axios.post(baseUrl+'/login',currentUser)
+      $cookies.set('jwt',data.token)
+      alert(data.msg)
+      await router.push('/') 
+      //push - keeps the browser histore of the visited page
+      commit('setLogged',true)
+
+      window.location.reload()
+     },
+
+      async logout(context){
+        let cookies = $cookies.keys()
+        $cookies.remove('jwt')
+        window.location.reload()
+        let {data} = await axios.delete(baseUrl + '/logout')
+        alert(data.msg)
+        
+      },
+
+
     async getProducts({commit}) {
       let { data } = await axios.get(baseUrl + "/products");
       commit("setProducts", data);
@@ -95,7 +104,7 @@ export default createStore({
     },
 
     async deleteUser(context,userID) {
-        let result = (await axios.delete(baseUrl + "/users/" + payload.userID)).data
+        let result = (await axios.delete(baseUrl + "/users/" + userID)).data
         console.log(result);
         if(result) {
           context.dispatch('getUsers')

@@ -5,12 +5,16 @@
  </div>
  <div class="container-fluid">
        <nav  v-if="showNavbar">
+         <router-link to="/">Landing</router-link> |
+         <!-- <router-link v-if="!$cookies.get('jwt')" to="/register">Register</router-link> | -->
+         <router-link to="/login">Login</router-link> |
          <router-link to="/home">Home</router-link> |
          <router-link to="/about">About</router-link> |
          <router-link to="/store">Store</router-link> |
          <router-link to="/checkout">Checkout</router-link> |
          <router-link to="/contact">Contact</router-link>
        </nav>
+       <!-- <button v-if="$cookies.get('jwt')" @click="logout">Logout</button> -->
        <!-- Button trigger modal -->
       <router-link to="userAdmin">view Users</router-link>
 
@@ -52,12 +56,8 @@ body {
 }
 
 @media screen and (max-width: 299px) {
-    .navbar {
-        /* overflow: hidden; */
-        font-size: 5px;
-        height :30px;
-        position: static;
-    }
+    
+
     nav a {
         font-size: 3px;
         font-weight: 2px;

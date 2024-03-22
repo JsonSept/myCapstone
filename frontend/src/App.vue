@@ -25,23 +25,28 @@ export default {
 
 <style>
 #app {
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #f9fbfd;
-  background-image:
+  /* background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/V2Qr25y/bgo.jpg');
 
      background-size:cover;
      background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; */
   
 }
-
+@media screen and (max-width: 299px){
 nav {
-  padding: 30px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
 }
 
 nav a {

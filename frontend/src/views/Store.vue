@@ -5,13 +5,13 @@
     </div v-if='getProducts'>
     <!-- <spinner-comp/> -->
     <div>
-        <!-- <slot> -->
+        
             <div class="row">
                 
                 <!-- <div class="col-lg-4" v-for="item in $store.state.products" :key='item'> -->
                   <div class="struct">
       <div class="card" v-for="item in $store.state.products" :key="item" style="width: 15rem;">
-          <img :src="item.image" alt="" style="height:100px; width:200px;" >
+          <img :src="item.image" alt="" style="height:100px; width:150px; margin-left: 14%;" >
               <div class="card-body">
                 <h6 class="card-title">{{item.name}}</h6>
                 <p class="card-text">{{item.description}}</p>
@@ -57,13 +57,21 @@
         },
       mounted() {
         this.getProducts
-        this.getProduct
+        // this.getProduct
         this.deleteProduct
       }
     };
   </script>
   
   <style>
+
+  img {
+    /* display: flex;
+    justify-content: center;
+    text-align: center; */
+
+    margin-right: 2%;
+  }
   .card {
     display:grid;
     justify-content: center;
@@ -79,11 +87,10 @@
   @media screen and (max-width: 300px) {
     img {
         width: 10px;
+        
     }
  .card {
-    /* height : 50px; */
-    /* width: 5px; */
-    /* font-size: 5px; */
+    
  }
  p {
     font-size: 8px;
@@ -100,10 +107,10 @@
  button:hover {
     box-shadow: 3px 2px 3px #000000;
  }
-
- img {
-    height:3px;
- }
+.struct {
+    
+}
+ 
   }
   .card:hover{
   transform: scale(1.05);

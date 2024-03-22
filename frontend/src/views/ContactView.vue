@@ -42,6 +42,7 @@
   
   <style scoped>
   .contact-form {
+    padding-top: 10%;
     font-size: small;
     max-width: 300px;
     margin: 0 auto;
@@ -81,5 +82,19 @@
   
   button:hover {
     background-color: #00b321;
+  }
+  @media screen and (max-width: 300px) {
+    .form-group {
+        padding-top: 10%;
+        margin-top: 20%;
+        margin-bottom:30px;
+    }
+    input {
+        width: 200px;
+    }
+    button:hover {
+        background-color: #0b0a0a;
+        color:white;
+    }
   }
   </style>
