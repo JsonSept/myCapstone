@@ -69,7 +69,7 @@ editUser : async(req,res)=>{
 deleteUser : async(req,res)=>{
     try{
     res.send(await deleteUser(+req.params.id))
-    alert('user has been removed from the database')
+    // alert('user has been removed from the database')
 }catch(err){
     console.log(err);
     res.json({
