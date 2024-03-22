@@ -1,10 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <navbar-comp/>
+  
   <router-view/>
+  <footer-comp/>
+  <product-admin/>
 </template>
+
+<script>
+
+import NavbarComp from './components/NavbarComp.vue'
+import FooterComp from './components/FooterComp.vue'
+
+export default {
+  components : {
+    NavbarComp,
+    FooterComp,
+    
+  },
+  data() {
+
+  }
+ }
+</script>
 
 <style>
 #app {
@@ -12,7 +29,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f9fbfd;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/V2Qr25y/bgo.jpg');
+
+     background-size:cover;
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  
 }
 
 nav {
@@ -21,10 +46,22 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #f5f6f7;
+  
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  border: solid 1px black;
+  padding: 5px;
+  color: #000000;
+  background: white;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 2px 4px 7px rgb(6, 2, 2);
+  transition: transform .6s;
+  
+}
+
+nav a.router-link-exact-active:hover {
+  transform: scale(0.2); 
 }
 </style>
