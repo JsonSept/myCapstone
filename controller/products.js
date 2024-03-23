@@ -53,7 +53,7 @@ editProduct : async(req,res)=>{
 deleteProduct : async(req,res)=>{
     try{
     res.send(await deleteProduct(+req.params.id))
-    // alert('product has been removed from the database')
+    alert('product has been removed from the database')
 }catch(err){
     console.log(err);
     res.json({
