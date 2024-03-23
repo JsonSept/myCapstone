@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import bcrypt from 'bcrypt'
+// import bcrypt from 'bcrypt'
 import swal from 'sweetalert'
 import jwt from 'jsonwebtoken'
 import mysql2 from 'mysql2'
@@ -19,7 +19,7 @@ app.use(cors({
     origin: 'mycapstone-27eaa.firebaseapp.com',
     // origin: 'http://localhost:8080'
     // origin: 'http://capstone-social-app.onrender.com'
-    // credentials:true
+    credentials:true
 }))
 app.use(express.json())
 app.use(cookieParser())
