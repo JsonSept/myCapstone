@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import bcrypt from 'bcrypt'
+import bcryptjs from 'bcryptjs'
 import swal from 'sweetalert'
 import jwt from 'jsonwebtoken'
 import mysql2 from 'mysql2'
