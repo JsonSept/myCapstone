@@ -20,7 +20,14 @@ export default {
 </script>
 
 <style>
-
+.aboutPage {
+  width: 50%;
+  padding:5%;
+  display: flex;
+  justify-content: center;
+  text-align:center;
+  margin-left: 30%;
+}
 .aboutCard {
   margin-bottom: 20%;
 }
@@ -41,31 +48,24 @@ export default {
 
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 900px) {
 .aboutPage {
-  width: 280px;
-  font-size: 30px;
-  padding-top: 60%;
+  width: 290px;
+  font-size: 9px;
+  padding-top: 20%;
+  margin-right: 30%;
  }
 .aboutCard {
   margin-top: 40%;
+  margin-right: 60%;
+  /* padding-right: 5%; */
 }
 p {
-  font-size: 1px;
+ margin-right: 16%;
 }
 
 }
-.about-page {
-text-align: center;
-justify-content: center;
-display: flex;
 
-  color: white;
-  background-size: cover;
-  padding: 5%;
-  padding-bottom: 5%;
-  
-}
 .img1 {
   border-radius: 100px;
   height: 60%;
@@ -81,16 +81,16 @@ font-size: 1px;
 border:1px solid black;
 }
 
-.aboutCard:hover {
+/* .aboutCard:hover {
   box-shadow: 1px 1px 5px rgb(255, 255, 255);
 }
 
 :root {
   --animate-delay: .01s;
-}
+} */
 
 /* All delay classes will take half the time to start */
-:root {
+/* :root {
   --animate-delay: 0.1s;
-}
+} */
 </style>

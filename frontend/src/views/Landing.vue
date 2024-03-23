@@ -13,28 +13,29 @@ export default {
     body {
         background-color:black;
     }
+    .btn {
+        margin-top: 8%;
+        padding-top:2%; 
+    }
     .btn1 {
         width: 100px;
-        box-shadow: 3px 3px 5px white;
+        box-shadow: 3px 3px 5px rgb(0, 0, 0);
         border-radius: 5px 5px 5px 0;
         display:flex;
         flex-wrap: wrap;
         justify-content:center;
+       
         /* text-align:center; */
 
     }
-    button: hover {
+    button:hover {
         transform: scale(1.05);
     }
-    .btn {
-        /* margin-bottom:60%;
-        padding-top:30%; */
-        margin-top: 10%;
-    }
-    @media screen and (max-width: 300px) {
-
-    }.btn {
-        padding-top:70%;
-        padding-bottom: 45%;
+    
+    @media screen and (max-width: 900px) {
+.btn {
+    margin-top: 50%;
+     color:aqua;
+}
     }
 </style>

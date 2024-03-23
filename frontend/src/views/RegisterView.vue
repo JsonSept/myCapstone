@@ -1,16 +1,24 @@
-<!-- <template>
+<template>
     <div>
         <input type="firstname" firstname="firstname" placeholder="firstname" v-model="payload.firstname"><br><br>
         <input type="lastname" lastname="lastname" placeholder="lastname" v-model="payload.lastname"><br><br>
         <input type="email" name="email" placeholder="email" v-model="payload.email"><br><br>
         <input type="password" name="password" placeholder="password" v-model="payload.password"><br><br>
         <router-link to="/login"><button type="button" @click.prevent="registration">SignUp</button></router-link>
-         {{ $store.state.loggedIn }}
+         <!-- {{ $store.state.loggedIn }} -->
         <router-link to="/login"><button @click.prevent="loginUser">Login</button></router-link>
     </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
+
 export default {
+    name:'sweetalert2demo',
+    methods:{
+        handleAlertClick(){
+            swal("Good job!", "You clicked the button!", "success")
+        }
+    },
     data(){
         return {
             payload: {
@@ -50,38 +58,5 @@ export default {
     text {
         color:black;
     }
-</style> -->
-
-<template>
-    <div>
-        <input type="text" name="username" placeholder="username" v-model="username"><br><br>
-        <input type="text" name="password" placeholder="password" v-model="password"><br><br>
-        <button @click="registerUser">SignUp</button>
-        {{ $store.state.loggedIn }}
-        <button @click="loginUser">Login</button>
-    </div>
-</template>
-<script>
-export default {
-    data(){
-        return {
-            username:null,
-            password:null
-        }
-    },
-    computed: {
-        registerUser(){
-            //console.log(this.$data)
-            this.$store.dispatch("registerUser",this.$data)
-        },
-        loginUser(){
-            this.$store.dispatch('loginUser',this.$data)
-        }
-    }
-}
-</script>
-<style>
-    text {
-        color:black;
-    }
 </style>
+

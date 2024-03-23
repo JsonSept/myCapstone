@@ -1,24 +1,24 @@
 <template lang="">
     <div>
-    <h3>All Products</h3>
+    <h3>Checkout</h3>
         <br><br>
         <Spinner-comp v-if="loadingProducts" />
           <slot-comp>
-            <div class="card">
+            <div class="cardTbl">
                 <table class="table table-striped">
                 <tr>
                   <th class="">Product ID</th>
                   <th>Name</th>
                   <th>Description</th>
                   <th>price</th>
-                  <th>Product</th>
+                  <!-- <th>Product</th> -->
                 </tr>
                 <tbody v-for="item in $store.state.products" :key="item">
                 <td>{{item.prodID}}</td>
                 <td>{{item.name}}</td>
                 <td>{{item.description}}</td>
                 <td>{{item.price}}</td>
-                <td><img :src="item.image" alt="" height="80px" width="90px"></td>
+                <!-- <td><img :src="item.image" alt="" height="20px" width="20px"></td> -->
                 <td><button @click="deleteProduct(item.prodID)">Delete</button></td>
                 <td><button @click="editProduct(item.prodID)">Edit</button></td>
             </tbody>
@@ -67,6 +67,7 @@ export default {
   <style scoped>
 table{
   border: solid white 3px;
+  font-size: 12px;
 }
   tbody,td ,th{
     border: solid white 3px;

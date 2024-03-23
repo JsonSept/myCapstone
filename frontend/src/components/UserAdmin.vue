@@ -1,8 +1,8 @@
 <template lang="">
-    <div>
-    <h3>All Products</h3>
+    <div class="userAdmin">
+    <h3>All Users</h3>
         <br><br>
-        <Spinner-comp v-if="loadingProducts" />
+
           <slot-comp>
             <div class="cards">
                 <table class="table table-striped">
@@ -25,8 +25,9 @@
                 <td>{{item.email}}</td>
                 <td>{{item.password}}</td>
                 <!-- <td><img :src="item.image" alt="" height="80px" width="90px"></td> -->
-                <td><button  @click.prevent="rmvUser">Delete</button></td> 
-            <td><router-link to="/editUser"><button>Edit</button></router-link></td>
+                <td><button id="btn1"  @click.prevent="rmvUser">Delete</button></td> 
+                <td><button id="btn1" to="/editUser"  @click.prevent="editUser">Edit</button></td> 
+                <!-- <td><router-link to="/editUser"><button id="btn1">Edit</button></router-link></td> -->
             </tbody>
             
         </table>
@@ -71,8 +72,15 @@ export default {
   };
   </script>
   
-  <style scoped>
+  <style>
+  .userAdmin {
+    height:100vh;
+  }
+  #btn1 {
+    border-radius:4px;
+  }
 table{
+  /* margin-bottom: 50%; */
     font-size: 9px;
   border: solid white 3px;
 }

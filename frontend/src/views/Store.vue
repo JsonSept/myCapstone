@@ -1,20 +1,15 @@
-
 <template>
-    <div>
-
-    </div v-if='getProducts'>
-    <!-- <spinner-comp/> -->
-    <div>
+    <div class="page">
         
             <div class="row">
                 
                 <!-- <div class="col-lg-4" v-for="item in $store.state.products" :key='item'> -->
                   <div class="struct">
-      <div class="card" v-for="item in $store.state.products" :key="item" style="width: 15rem;">
-          <img :src="item.image" alt="" style="height:100px; width:150px; margin-left: 14%;" >
+      <div class="cardProd" v-for="item in $store.state.products" :key="item" style="width: 15rem;">
+          <img id="hstImg" :src="item.image" alt="" style="height:100px; width:150px; margin-left: 14%;" >
               <div class="card-body">
                 <h6 class="card-title">{{item.name}}</h6>
-                <p class="card-text">{{item.description}}</p>
+                <!-- <p class="card-text">{{item.description}}</p> -->
                 <h6>R{{item.price}}.00</h6>
                 <a href="#" class="btn"><button>Add to cart</button></a>
               </div>
@@ -24,10 +19,7 @@
                     
             </div>
   
-  
-  
-        <!-- </slot> -->
-    <!-- </div> -->
+
   </template>
   
   <script>
@@ -57,40 +49,40 @@
         },
       mounted() {
         this.getProducts
-        // this.getProduct
         this.deleteProduct
       }
     };
   </script>
   
   <style>
-
+.page {
+  height :100vh;
+}
   img {
-    /* display: flex;
-    justify-content: center;
-    text-align: center; */
+    
 
     margin-right: 2%;
   }
-  .card {
+  .cardProd {
+    border-radius: 10px;
     display:grid;
     justify-content: center;
-    
   font-size: 10px;
-  box-shadow: 1px 1px 5px rgb(255, 255, 255);
-  
+  box-shadow: 1px 3px 8px rgb(0, 0, 0);
    padding: 10px; 
   height : 40vh;
-  
+  background-color: white;
   border:1px solid black;
+  color: black;
   }
   @media screen and (max-width: 300px) {
-    img {
-        width: 10px;
+    #hstImg {
+        width: 5px;
+        height:20px;
         
     }
  .card {
-    
+    height:10vh;
  }
  p {
     font-size: 8px;

@@ -42,16 +42,18 @@
   
   <style scoped>
   .contact-form {
-    padding-top: 10%;
+    /* padding-top: 2%; */
     font-size: small;
     max-width: 300px;
     margin: 0 auto;
     height:100vh;
+    margin-bottom: 30%;
     /* box-shadow: 1px 1px 5px rgb(6, 2, 2); */
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    /* margin-top: 10%; */
   }
   
   label {
@@ -64,7 +66,7 @@
   input[type="email"],
   textarea {
     width: 100%;
-    padding: 10px;
+    padding: 6px;
     border: 1px solid #000000;
     border-radius: 4px;
     box-shadow: 1px 1px 5px rgb(6, 2, 2);

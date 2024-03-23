@@ -40,12 +40,19 @@ export default {
     background-position: center; */
   
 }
-@media screen and (max-width: 299px){
+@media screen and (max-width: 900px){
 nav {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: 7px;
+  height:auto;
+}
+nav a {
+  padding:2px;
+}
+nav a.router-link-exact-active {
+  padding: 2px;
 }
 }
 

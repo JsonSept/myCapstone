@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-
+import swal from 'sweetalert'
 const baseUrl = "http://localhost:8076";
 // const baseUrl = "https://capstone-social-app.onrender.com";
 
@@ -41,10 +41,12 @@ export default createStore({
     },
   },
   actions: {
+   
     async registerUser({commit}, newUser){
       console.log(newUser);
       let {data} = await axios.post(baseUrl+'/users',newUser)
-      alert(data.msg)
+      // alert(data.msg)
+     
       window.location.reload()
      },
      async loginUser({commit}, currentUser){
@@ -96,7 +98,8 @@ export default createStore({
         if (result) {
           context.dispatch("getUsers");
         }
-        alert(data.msg)
+        // alert(data.msg)
+        // swal("Good job!", "You clicked the button!", "success")
         window.location.reload()
       } catch (e) {
         alert(e.message);
@@ -118,4 +121,5 @@ export default createStore({
     },
   },
   modules: {},
+
 });

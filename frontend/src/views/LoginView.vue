@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     
 
     <div class="view" v-for="info in $store.state.friends" :key="info">
@@ -45,4 +45,18 @@ body {
         height : 190px;
     }
 }
+</style> -->
+
+<template lang="">
+    <div>
+        
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style lang="">
+    
 </style>
