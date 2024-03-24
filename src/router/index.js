@@ -13,8 +13,8 @@ const routes = [
     component: () => import('../views/RegisterView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
+    path: '/loginPge',
+    name: 'loginPge',
     component: () => import('../views/LoginView.vue')
   },
   {

@@ -4,9 +4,9 @@
         <input type="lastname" lastname="lastname" placeholder="lastname" v-model="payload.lastname"><br><br>
         <input type="email" name="email" placeholder="email" v-model="payload.email"><br><br>
         <input type="password" name="password" placeholder="password" v-model="payload.password"><br><br>
-        <router-link to="/login"><button type="button" @click.prevent="registration">SignUp</button></router-link>
+        <router-link to="/loginPge"><button type="button" @click.prevent="registration">SignUp</button></router-link>
          <!-- {{ $store.state.loggedIn }} -->
-        <router-link to="/login"><button @click.prevent="loginUser">Login</button></router-link>
+        <router-link to="/loginPge"><button @click.prevent="loginUser">Login</button></router-link>
     </div>
 </template>
 <script>
