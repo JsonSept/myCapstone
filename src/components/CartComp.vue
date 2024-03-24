@@ -11,9 +11,11 @@
         <div>Total: {{ total }}</div>
       </div>
     </div>
+    <cart-comp/>
   </template>
   
   <script>
+  
   export default {
     data() {
       return {
@@ -26,7 +28,7 @@
       }
     },
     methods: {
-      removeItem(index) {
+      deleteProduct(index) {
         this.cartItems.splice(index, 1);
       }
     }
