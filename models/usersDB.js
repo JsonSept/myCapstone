@@ -10,14 +10,12 @@ const getUsers = async()=>{
     `)
     return result
 }
-// const getUser = async(id) =>{
-//     const [result] = await pool.query(`
-//     SELECT *
-//     FROM users
-//     WHERE userID = ?
-//     `,[id])
-//     return result
-// }
+const sortByName = async() => {
+    const [result] = await pool.query(`
+    SELECT * FROM users ORDER BY name
+    `)
+    return result
+}
 const getUser = async(id) =>{
     const [result] = await pool.query(`
     SELECT *
@@ -64,5 +62,5 @@ const checkRoleStatus = async (user) => {
        return userRole;
    }
 
-
-export {getUsers,getUser,addUser,editUser,deleteUser,checkUser,checkRoleStatus}
+   
+export {getUsers,getUser,addUser,sortByName,editUser,deleteUser,checkUser,checkRoleStatus}

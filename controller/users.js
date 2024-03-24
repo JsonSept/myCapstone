@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import {getUsers,getUser,addUser,editUser,deleteUser} from '../models/usersDB.js'
+import {getUsers,sortByName,getUser,addUser,editUser,deleteUser} from '../models/usersDB.js'
 // import {getUsers,addUser,editUser,getUser,deleteUser} from '../models/usersDB.js'
 const saltRounds = 10;
 export default {
@@ -11,6 +11,17 @@ export default {
             console.error(err);
             res.json({
                 msg: 'An error has occurred when retrieving the data.'
+            }) 
+        }
+    },
+
+    sortByName: async (req,res)=>{
+        try{
+            res.send(await getUsers())
+        }catch(err){
+            console.error(err);
+            res.json({
+                msg: 'An error has occurred while sorting the data.'
             }) 
         }
     },
