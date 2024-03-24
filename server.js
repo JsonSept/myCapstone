@@ -16,14 +16,24 @@ config()
 
 const PORT = process.env.PORT
 const app = express()
-app.use(cors({
-    origin: 'mycapstone-27eaa.firebaseapp.com',
-    // origin: 'http://localhost:8080'
-    // origin: 'http://capstone-social-app.onrender.com'
-    credentials:true
-}))
+
+const corsOptions = {
+    origin: "mycapstone-27eaa.firebaseapp.com"
+};
+
+app.use(cors(corsOptions))
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.json())
 app.use(cookieParser())
+
+
+app.get("/", (req,res) => {
+    res.json({ msg: "Welcome to my aplication"});
+});
 
 const posts = [
 {
@@ -35,32 +45,32 @@ title: 'Post 1'
     title: 'Post 2'
     }
 ]
-app.get('/posts', (req,res)=> {
-res.json(posts.filter(post => post.username === req.user.name))
-}),
+// app.get('/posts', (req,res)=> {
+// res.json(posts.filter(post => post.username === req.user.name))
+// }),
 
-app.post('/login', (req, res)=> {
-// Authenticate User
+// app.post('/login', (req, res)=> {
+// // Authenticate User
 
-const username = req.body.username
-const user = { name: username }
+// const username = req.body.username
+// const user = { name: username }
 
 
-const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET)
-res.json({ accessToken: accessToken })
-})
+// const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET)
+// res.json({ accessToken: accessToken });
+// });
 
-// function authenticateToken(req,res,next) {
-//     const authHeader = req.headers['authorization']
-//     const token = authHeader.split(' ')[1]
-//     if (token == null) return res.sendStatus(401)
+function authenticateToken(req,res,next) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader.split(' ')[1]
+    if (token == null) return res.sendStatus(401)
     
-//     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err,user) => {
-//         if (err) return res.sendStatus(403)
-//         req.user = user
-//     next();
-// })
-// };
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err,user) => {
+        if (err) return res.sendStatus(403)
+        req.user = user
+    next();
+})
+};
 
 app.use('/products', productsRouter)
 app.use('/users', usersRouter),
