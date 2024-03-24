@@ -14,8 +14,8 @@ config()
 
 
 
-const PORT = process.env.PORT
 const app = express()
+const PORT = process.env.PORT
 
 const corsOptions = {
     origin: "mycapstone-27eaa.firebaseapp.com"
@@ -23,9 +23,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json())
 app.use(cookieParser())
