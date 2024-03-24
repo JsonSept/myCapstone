@@ -103,9 +103,6 @@
  button:hover {
     box-shadow: 3px 2px 3px #000000;
  }
-.struct {
-    
-}
  
   }
   .card:hover{
