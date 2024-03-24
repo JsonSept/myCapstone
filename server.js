@@ -1,6 +1,7 @@
+// import bcrypt from 'bcrypt'
+const bcrypt = require('bcrypt')
 import express from 'express'
 import cors from 'cors'
-import bcrypt from 'bcrypt'
 import swal from 'sweetalert'
 import jwt from 'jsonwebtoken'
 import mysql2 from 'mysql2'
