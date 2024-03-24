@@ -14,6 +14,10 @@
          <router-link to="/checkout">Checkout</router-link> |
          <router-link to="/contact">Contact</router-link>
        </nav>
+       <router-link to="/cart">
+         linkie
+       </router-link>
+      
        <!-- <button v-if="$cookies.get('jwt')" @click="logout">Logout</button> -->
        <!-- Button trigger modal -->
       <router-link to="userAdmin">view Users</router-link>
@@ -28,7 +32,9 @@
 </nav>
 </template>
 <script>
+
 export default {
+  
    data() {
    return {
      showNavbar: true

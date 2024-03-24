@@ -1,9 +1,9 @@
-<!-- <template>
+<template>
     
 
-    <div class="view" v-for="info in $store.state.friends" :key="info">
-        <input type="name" placeholder="name"><br>
-        <input type="age" placeholder="age"><br>
+    <div class="view" v-for="info in $store.state.users" :key="info">
+        <input type="email" placeholder="email"><br>
+        <input type="password" placeholder="password"><br>
         <button @click="submitData">Submit</button>
         <h1>{{ info }}</h1>
     </div>
@@ -45,18 +45,5 @@ body {
         height : 190px;
     }
 }
-</style> -->
-
-<template lang="">
-    <div>
-        
-    </div>
-</template>
-<script>
-export default {
-    
-}
-</script>
-<style lang="">
-    
 </style>
+

@@ -40,6 +40,7 @@ export default {
         addUser(){
             
             this.$store.dispatch("addUser",this.$data)
+            alert("New User has been added")
         },
         loginUser(){
             this.$store.dispatch('loginUser',this.$data)

@@ -61,7 +61,9 @@ nav a {
   color: #f5f6f7;
   
 }
-
+nav a:hover {
+color:aqua;
+}
 nav a.router-link-exact-active {
   border: solid 1px black;
   padding: 5px;

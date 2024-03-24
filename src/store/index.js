@@ -1,8 +1,8 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import swal from 'sweetalert'
-const baseUrl = "http://localhost:8076";
-// const baseUrl = "https://capstone-social-app.onrender.com";
+// const baseUrl = "http://localhost:8076";
+const baseUrl = "https://capstone-social-app.onrender.com";
 
 
 
@@ -46,7 +46,7 @@ export default createStore({
       console.log(newUser);
       let {data} = await axios.post(baseUrl+'/users',newUser)
       // alert(data.msg)
-     
+     commit('setRegister',true)
       window.location.reload()
      },
      async loginUser({commit}, currentUser){
@@ -69,22 +69,29 @@ export default createStore({
         alert(data.msg)
         
       },
-
-
-    async getProducts({commit}) {
-      let { data } = await axios.get(baseUrl + "/products");
-      commit("setProducts", data);
+      
+      async getProducts({commit}) {
+        let { data } = await axios.get(baseUrl + "/products");
+        commit("setProducts", data);
+      },
+      async getProduct({ commit }) {
+        let { data } = await axios.get(baseUrl + "/products");
+        commit("setProduct", data);
+      },
+      async deleteProduct({ commit }, name) {
+        let { data } = await axios.get(baseUrl + "/products/" + name);
+        commit("setProduct", data);
+        window.location.reload();
     },
-    async getProduct({ commit }) {
-      let { data } = await axios.get(baseUrl + "/products");
-      commit("setProduct", data);
+    async sortByName(context) {
+      try {
+        let result = (await axios.get(baseUrl + "/products")).data;
+        context.dispatch('getProducts')
+      }catch (err) {
+        alert(err)
+      }
     },
-    async deleteProduct({ commit }, name) {
-      let { data } = await axios.get(baseUrl + "/products/" + name);
-      commit("setProduct", data);
-      window.location.reload();
-    },
-
+    
     //users
     async getUsers({ commit }) {
       let { data } = await axios.get(baseUrl + "/users");

@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        
+        <button type="button" @click.prevent="sortByName">Sort</button>
             <div class="row">
                 
                 <!-- <div class="col-lg-4" v-for="item in $store.state.products" :key='item'> -->
@@ -45,11 +45,15 @@
       },
       async deleteProduct() {
           await this.$store.dispatch('')
+      },
+      async sortByName() {
+        await this.$store.dispatch('sortByName')
       }
         },
       mounted() {
         this.getProducts
         this.deleteProduct
+        this.sortByName
       }
     };
   </script>
