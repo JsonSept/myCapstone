@@ -10,6 +10,12 @@ const getProducts = async()=>{
     `)
     return result
 }
+const sortByName = async() => {
+    const [result] = await pool.query(`
+    SELECT * FROM products ORDER BY name
+    `)
+    return result
+}
 // const getProduct = async(prodID) =>{
 //     const [result] = await pool.query(`
 //     SELECT *
@@ -49,4 +55,4 @@ const deleteProduct = async(id) => { // pool helps connect to the database
 }
 
 
-export {getProducts,getProduct,addProduct,editProduct,deleteProduct}
+export {getProducts,sortByName,getProduct,addProduct,editProduct,deleteProduct}

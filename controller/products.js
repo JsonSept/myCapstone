@@ -11,6 +11,17 @@ export default {
             }) 
         }
     },
+
+    sortByName: async (req,res)=>{
+        try{
+            res.send(await getProducts())
+        }catch(err){
+            console.error(err);
+            res.json({
+                msg: 'An error has occurred while sorting the data.'
+            }) 
+        }
+    },
     getProduct :async (req,res)=>{
         try {
         res.send(await getProduct(+req.params.id))

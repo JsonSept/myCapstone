@@ -6,7 +6,7 @@ router
     .route('/')
             .get(controller.getProducts)
             .post(controller.addProduct)
-         
+            .get(controller.sortByName)
 
 router
     .route('/:id')
